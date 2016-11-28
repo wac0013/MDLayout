@@ -1,0 +1,1499 @@
+/*
+    http://www.outsystems.com/goto/londontheme
+    
+    To override a style copy and paste it to 
+    the application theme and then modify it
+
+    0. Imports
+    1. Resets
+    2. General Properties
+    3. Structure
+    4. Text formating
+    5. Forms
+    6. Built-in widgets
+    7. Validation    
+    8. RichWidgets
+    9. Responsive desktop
+    10. Responsive tablet portrait
+    11. Responsive smartphones 
+    12. Additional patterns
+    
+*/
+
+/***    0. Imports    ***/
+
+@import url(/RichWidgets/Theme.FontAwesome.css);
+@import url(/RichWidgets/Theme.FontRoboto.css);
+
+
+/***    1. Resets    ***/
+
+html, body, div, span, 
+a, img,  ul, li, form {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    font: inherit;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+}
+ 
+table[cellSpacing] {
+    border-collapse: separate;
+}
+
+td, textarea, img {
+    vertical-align:top;
+}
+
+img {
+    border-width: 0;
+    max-width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+:focus {
+    outline: none;
+}
+
+/***     2. General properties    ***/
+
+body {
+    background: #F2F2F2;
+}
+
+body, select, textarea, input {
+    font-family: Roboto, Helvetica, Arial, Meiryo, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.43;
+    color: #333;
+}
+
+.Heading1 {
+    font-size: 26px;   
+    line-height: 1.2;
+}
+
+.Heading2 {
+    font-size: 22px; 
+    line-height: 1.25;
+}
+
+.Heading3 {
+    font-size: 18px;
+    line-height: 1.11;
+}
+
+span.Heading1,
+span.Heading2,
+span.Heading3 {
+    display: block;
+}
+
+div.Heading1 {
+    margin-top: 40px;
+}
+
+div.Heading2 {
+    margin-top: 30px;
+}
+
+div.Heading3 {
+    margin-top: 20px;
+}
+
+a,
+a:link,
+a:visited {
+    color: #E83E26;     
+    text-decoration: none;
+    transition: color .2s ease-in;
+    -webkit-transition: color .2s ease-in;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a[disabled='disabled'], 
+a[disabled='disabled']:hover {
+    color: #CCC;
+    text-decoration: none;
+}
+
+div[onclick] {
+    cursor: pointer; /* add a pointer cursor when the div has a click event */   
+}
+
+/***     3. Structure    ***/
+
+.Header {
+    background-color: #393939;   
+    color: #D1D1D1;
+    position: fixed;
+    -servicestudio-position: absolute; /* avoid adorners overlapping header */
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0px 1px 3px #111;
+}
+
+.Header img {
+    vertical-align: middle;   
+}
+
+.Header_LeftSection {
+    margin-right: 28px;
+}
+
+.Header_RightSection {
+    width: 28px;
+    float: right;
+    line-height: 50px;
+    height: 50px;
+}
+
+.Application_Title {
+    text-transform: uppercase;
+    line-height: 50px;
+    padding-left: 3px;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.Application_Title a,
+.Application_Title a:link,
+.Application_Title a:visited,
+.Application_Title a:hover {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+.Application_Title img {
+    max-height: 20px;
+    padding-bottom: 4px;
+}
+
+.Login_Info,
+.AppSwitcherContainer,
+a.Login_Info_Username, 
+a.Login_Info_Username:link, 
+a.Login_Info_Username:visited {
+    color: #999;
+    font-weight: normal;
+}
+
+.Login_Info {
+    float: right;
+    padding: 15px 0px;
+}
+
+.Login_Info_Username {
+    font-size: 100%;
+    margin-right: 10px;
+}
+
+.Login_Info_Logout {
+    font-size: 0px;
+}
+
+.Login_Info_Logout:before {
+    content: "\f011"; /* fa-power-off at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    color: #E83E26;
+    font-size: 14px;
+    -servicestudio-display:none;
+}
+
+.Login_Info_Username:before {
+    content: "\f007"; /* fa-user at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    color: #E83E26;
+    margin-right: 5px;
+}
+
+.AppSwitcherContainer:before {
+    content: "\f074"; /* fa-random at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    color: #E83E26;
+    margin-right: 5px;
+}
+
+.AppSwitcherList {
+    left: -28px;
+    border: 0;
+    background: #393939;
+}
+
+.AppSwitcherLink,
+.AppSwitcherLink:link,
+.AppSwitcherLink:visited {
+    padding: 6px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    text-shadow: none;
+    line-height: 2em;
+    color: #c4c4c4;
+    white-space: nowrap;
+    margin: 0;
+    text-align: left;
+    border-bottom: 1px solid #555555;
+}
+
+.AppSwitcherDownArrow {
+    display: none;
+}
+
+.AppSwitcherLink[disabled="disabled"] {
+    color: #555555;
+}
+
+.AppSwitcherLink[disabled="disabled"]:before {
+    content: "\f046"; /* fa-check-square-o at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    margin-left: 3px;
+    color: #555555;
+    margin-right: 5px;
+    font-size: 11px;
+}
+
+
+.MainContent {
+    margin-top: 30px;
+}
+
+.Title {
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0px;
+    white-space: nowrap;
+}
+
+div.Title.Heading1 {
+    margin-top: 0px;
+    line-height: 34px;
+}
+
+.Title_Section {
+    position: relative;  
+    margin-top: 34px;
+}
+
+.Actions {
+    width: 30%;
+    text-align: right;
+    line-height: 34px;
+    font-size: 16px;  
+}
+
+
+.Actions a {
+    margin-left: 20px;   
+}
+
+.Actions a:first-child {
+    margin-left: 0px;   
+}
+
+/* Intelliwarp generated actions*/
+a.ActionAdd:before,
+a.ActionEdit:before,
+a.ActionDelete:before,
+a.ActionChange:before {
+    color: #E83E26;
+    font-family: FontAwesome;
+}
+
+a.ActionAdd:before {
+    content: "\f067"; /* fa-plus at http://fortawesome.github.io/Font-Awesome/icons/ */
+}
+
+a.ActionEdit:before {
+    content: "\f040"; /* fa-pencil at http://fortawesome.github.io/Font-Awesome/icons/ */
+}
+
+a.ActionDelete:before {
+    content: "\f014"; /* fa-trash-o at http://fortawesome.github.io/Font-Awesome/icons/ */
+}
+
+a.ActionChange:before {
+    content: "\f023"; /* fa-lock at http://fortawesome.github.io/Font-Awesome/icons/ */
+}
+
+a.ActionAdd:before, 
+a.ActionEdit:before,
+a.ActionDelete:before,
+a.ActionChange:before,
+.Actions [class^=fa] {
+    width: 32px;
+    height: 32px;    
+    line-height: 32px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+    background: #E83E26;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+a[disabled='disabled'].ActionAdd:before, 
+a[disabled='disabled'].ActionEdit:before,
+a[disabled='disabled'].ActionDelete:before,
+a[disabled='disabled'].ActionChange:before,
+.Actions a[disabled='disabled'] [class^=fa] {
+   background-color: #CCC;
+   box-shadow: none; 
+}
+
+a.ActionAdd:active:before, 
+a.ActionEdit:active:before,
+a.ActionDelete:active:before,
+a.ActionChange:active:before,
+.Actions:active [class^=fa] {
+    /* Add Touch States to Your Buttons */
+    box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.25); 
+}
+
+a.ActionAdd:before {
+    line-height: 34px; /* fix plus alignment */
+}
+
+.Actions a[disabled='disabled'] [class^=fa] {
+    background: #CCC;
+}
+
+/* To work with old applications */
+div.Title_Links {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.Content, .MainContent {
+    background: rgb(242, 242, 242);   
+}
+
+.Content {
+    padding-top: 105px;;
+    min-height: 400px;
+}
+
+.MainContent {
+    min-height: 400px;
+    padding-bottom: 30px;
+}
+
+.Footer {
+    color: #999;
+    font-size: 12px;   
+    text-align: center; 
+    min-height: 50px;
+    padding: 10px 0;
+    background: #d6d6d6;
+    background: rgb(214,214,214); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(214,214,214,1) 0%, rgba(242,242,242,1) 10%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,214,214,1)), color-stop(10%,rgba(242,242,242,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(214,214,214,1) 0%,rgba(242,242,242,1) 10%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(214,214,214,1) 0%,rgba(242,242,242,1) 10%,rgba(242,242,242,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(214,214,214,1) 0%,rgba(242,242,242,1) 10%,rgba(242,242,242,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(214,214,214,1) 0%,rgba(242,242,242,1) 10%,rgba(242,242,242,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+
+}
+
+.Footer img {
+    padding-bottom: 3px;
+}
+
+.MainPopup {
+    background: #fff;
+    vertical-align: top;
+    padding: 14px 16px;
+    display: table-cell;
+}
+
+.MainPopup .Button.ThemeGrid_MarginGutter {
+    margin-left: 10px;
+}
+
+.ThemeGrid_Container {
+    /* Width and Paddings will be automatically set based on 
+     the theme Grid properties */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OSInlineClear {
+  /* This style will never be used in runtime.
+  When applied in Service Studio, it will prevent the style 'OSInline' from being
+  automatically applied to divs and tables with widths != (fill parent) */
+}
+
+/***     4. Text formatting    ***/
+
+.Bold {
+    display: inline;
+    font-weight: bold;
+}
+
+.Italic {
+    display: inline;
+    font-style: italic;
+}
+
+.Underline {
+    display: inline;
+    text-decoration: underline;
+}    
+
+.Text_Note {
+    font-size: 12px;
+    color: #888;
+}
+
+.Text_Error {
+    color: #c7331f;
+}
+
+.Text_NoWrap {
+    white-space: nowrap;
+}
+
+.Text_AlignBaseline {
+    /* Empty class that needs to be applied to text to align it with inputs and buttons in Google Chrome 
+    (create spans that reset vertical-align to baseline)*/
+}
+
+
+/* Menu Styles */
+
+.Header_Menu,
+.Application_Menu {
+    background: #555555; /* set the Application_Menu background color, applied when on slide mode */
+    white-space: nowrap;
+}
+
+.Menu_TopMenuActive {
+    border-bottom: none;  
+    background: #393939;
+}
+
+.Menu_TopMenu {    
+    margin: 0px;
+}
+
+.Menu_TopMenus:empty {
+    -servicestudio-min-height: 40px;
+}
+
+.Menu_TopMenu [class^=fa] {
+    margin-right: 8px;   
+}
+
+.Menu_TopMenu a:link,
+.Menu_TopMenu a:visited,
+.Menu_TopMenu a {
+    color: #C4C4C4;
+    text-decoration: none; 
+    text-shadow: none;
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+.Menu_TopMenu:hover,
+.Menu_TopMenu:hover a [class^=fa],
+.Menu_TopMenuActive a:link [class^=fa],
+.Menu_TopMenuActive a:visited [class^=fa],
+a.Menu_SubMenuItemActive:link [class^=fa], 
+a.Menu_SubMenuItemActive:visited [class^=fa],
+a.Menu_SubMenuItem:hover [class^=fa] {
+    color: #E83E26;
+    text-decoration: none;
+}
+
+.Menu_TopMenuActive .Menu_DropDownArrow {
+    border-top-color: #555555;
+}
+
+.Menu_DropDownArrow {
+    border-top-color: #C4C4C4;
+    right: 13px;
+}
+
+.Menu_DropDownPanel {
+    margin-top: 0px;
+    border: 1px solid #888;
+}
+
+a.Menu_SubMenuItem,
+a.Menu_SubMenuItem:hover, 
+a.Menu_SubMenuItem:link, 
+a.Menu_SubMenuItem:visited {
+    background-color: #747474;
+    margin: 0;
+    padding: 7px 20px 7px 20px;
+    border-bottom: 1px solid #555555;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: auto;
+}
+
+a.Menu_SubMenuItem,
+a.Menu_SubMenuItem:hover, 
+a.Menu_SubMenuItem:link, 
+a.Menu_SubMenuItem:visited {
+    color: #C4C4C4;
+}
+
+.Menu_TopMenuActive a:link,
+.Menu_TopMenuActive a:visited,
+a.Menu_SubMenuItemActive:link, 
+a.Menu_SubMenuItemActive:visited,
+a.Menu_SubMenuItem:hover {
+    color: white;
+}
+
+.MenuSlider_Toggler {
+    color: white;
+}
+
+/***     5. Forms    ***/
+
+textarea,
+select,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    font-size: 16px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    vertical-align: middle;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    padding: 0px 12px;
+    height: 34px;
+    line-height: 34px;
+}
+
+/* force padding to center vertically on Firefox */
+select {
+    padding: 4px 12px;
+    height: 34px;
+    line-height: 34px;
+}
+
+textarea {
+    padding: 10px 12px;
+}
+
+input, textarea {
+    margin: 0px;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    padding: 0px;
+    margin-right: 5px;
+}
+
+input[type=file] {
+    vertical-align: bottom;
+}
+
+input[readonly='readonly'],
+input[disabled='disabled'],
+select[disabled='disabled'] {    
+    color: #999;
+    background-image: none; /* remove the background image from the dropdowns */
+}
+
+select { 
+    background-image: url(data:image/png;base64,R0lGODlhDQAEAIAAAAAAAP8A/yH5BAEHAAEALAAAAAANAAQAAAILhA+hG5jMDpxvhgIAOw==);
+    background-repeat: no-repeat;
+    background-position: right center;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    line-height: 1.43;
+    text-indent: 0.01px;
+    text-overflow: '';    
+    padding-right:0\0; /* IE8, IE9 */
+}
+
+select:focus {
+    border: 1px solid #505050;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+#element {
+    color: green; /* IE8+9  */
+}
+
+textarea {
+    overflow: auto;
+}
+
+
+/***    6. Buit-in widgets    ***/
+
+.Button,
+a.ListNavigation_PageNumber:link,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis,
+a.ListNavigation_Previous:link,
+a.ListNavigation_Next:link {
+    background: #999;
+    border: 1px solid #888888;
+    color: white;
+    text-shadow: none;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 6px 20px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    filter: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    /* Add Touch States to Your Buttons: Remove the tap highlight color, we want to use active state css instead */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; /* For some Androids */
+}
+
+.Button:hover,
+a.Button:hover {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(82, 168, 236, 0.6);
+    text-decoration: none;
+}
+
+.Button:active {
+    /* Add Touch States to Your Buttons */
+    box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.25); 
+}
+
+.ButtonDefault,
+.Button.Is_Default {
+    background: #E83E26;
+    border: 1px solid #D43E27;
+    color: white;
+    text-shadow: none;
+    font-weight: normal;
+}
+
+.Button[disabled] {
+    background: #eeeeee;
+    box-shadow: none;
+    color: #ccc;
+    border-color: #eeeeee;
+}
+
+/*  Remove additional spacing (padding) added by the FF browser  */
+.Button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+.Filters_Wrapper {
+    background: rgb(230, 230, 230);
+    padding: 10px;
+    border-radius: 2px;
+    line-height: 34px;
+}
+
+.EditRecord {
+    margin-top: 20px;   
+    margin-bottom: 20px;
+}
+
+.EditRecord_Caption {
+    color: #666;
+    padding: 7px 10px 0 0;
+    vertical-align: top;
+}
+
+.EditRecord_Value {
+    padding: 5px 0;
+    line-height: 22px; /* needed to align labels with inputs*/
+    vertical-align: top;    
+}
+
+.EditRecord_Buttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: baseline;
+}
+
+.EditRecord_Buttons .Button {
+    padding-top:8px;
+    padding-bottom:8px;
+    vertical-align: baseline;
+}
+
+.ShowRecord_Caption {
+    color: #999;
+    padding: 4px 10px 4px 0;
+}
+
+.ShowRecord_Value {
+    padding: 4px 0;
+}
+
+.EditRecord .Heading2,
+.ShowRecord .Heading2,
+.EditRecord .Heading3,
+.ShowRecord .Heading3 {
+    margin-bottom: 10px;  
+}
+
+.TableRecords_Header {
+    color: #999;
+    border-bottom: 2px solid #C2C2C2;   
+    padding: 5px 0px 10px 10px;
+}
+
+.TableRecords_Header a,
+.TableRecords_Header a:link,
+.TableRecords_Header a:visited {
+    color: #999;
+}
+
+.TableRecords>tbody>tr:hover {
+    background: #FAFCFF;
+}
+
+.TableRecords {
+    background: white;
+    padding: 5px 0px 0px 0px;
+    margin-top: 20px;
+    border-bottom: 1px solid #C2C2C2;
+    border-top: 2px solid #C2C2C2;
+}
+
+.TableRecords_OddLine, .TableRecords_EvenLine {
+    border-bottom: 1px solid #C2C2C2;
+    padding: 7px 0 7px 10px;
+}
+
+.TableRecords_OddLine:first-child,
+.TableRecords_EvenLine:first-child,    
+.TableRecords_Header:first-child {
+    padding-left: 20px;
+}
+
+.TableRecords_OddLine:last-child,
+.TableRecords_EvenLine:last-child,    
+.TableRecords_Header:last-child {
+    padding-right: 20px;
+}
+
+.TableRecords_TopNavigation {
+    padding: 5px 0px;   
+}
+
+.TableRecords_BottomNavigation {
+    margin-top: 15px;   
+}
+
+.RecordPicture {
+    max-width: 100%;
+    border: 1px solid #eaeaea;
+}
+
+.RecordPicture_Wrapper {
+    max-width: 100%;
+}
+
+.RecordPicture_Wrapper .RecordPicture {
+    display: block;
+}
+
+.TableRecords .RecordPicture {
+    max-height: 40px;
+}
+
+
+/***     7. Validation    ***/
+
+.InputMandatorySymbol {
+    display: none; /* No "*" after input */
+}
+
+.MandatoryCaption:after,
+label.MandatoryLabel:after {
+    content: "*";
+    position: absolute;
+    padding: 0px 5px 5px 3px;
+    color: #BF1601;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.Prompt {
+    color: #bbb;
+}
+
+input.Not_Valid,
+textarea.Not_Valid,
+select.Not_Valid {
+    border: 1px solid #bf1601;
+    border-radius: 0;    
+}
+
+.ValidationMessage {
+    display:none;
+    color: #bf1601;
+    position: absolute;
+    border: 1px solid #bf1601;
+    background-color: #fbd4c5;
+    padding: 6px 10px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-left: -1px;
+    white-space: nowrap;
+    z-index:100;
+}
+
+/* In IE8 all validation messages are visible all the time */
+/* IE10 or less */
+.ValidationMessage {
+        display:inline-block\9;
+}
+/* IE 9 or over */
+:root .ValidationMessage {
+        display:none\0;
+}
+
+.Not_Valid:focus~.ValidationMessage {
+    display:inline-block;
+}
+
+.MainPopup .Not_Valid~.ValidationMessage,
+table:not(.EditRecord)>tbody>tr>td:last-child .Not_Valid~.ValidationMessage {
+    margin-top: 33px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 3px;
+    margin-right: 6px;
+    margin-left: 0px;
+    transform: translate(-100%);
+}
+
+/************** 8. RichWidgets **************/
+
+
+/* Feedback Message*/
+div.Feedback_Message_Wrapper {
+    margin-top: 124px; 
+    left: 0px;
+}
+
+div.Feedback_Message_Error,
+div.Feedback_Message_Success,
+div.Feedback_Message_Warning, 
+div.Feedback_Message_Info {
+    color: white;    
+    max-width: 940px;
+    min-width: 400px;
+    padding: 20px 50px 20px 20px;    
+    line-height: normal;
+    word-break: break-word;
+    border-radius: 0px;
+    border: none;
+    box-shadow: 0px 1px 3px #111;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    border-radius: 3px;
+}
+
+div.Feedback_Message_Error span,
+div.Feedback_Message_Success span,
+div.Feedback_Message_Warning span,
+div.Feedback_Message_Info span,
+a.Feedback_Message_Wrapper_Close {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+}
+
+div.Feedback_Message_Error img,
+div.Feedback_Message_Success img,
+div.Feedback_Message_Warning img,
+div.Feedback_Message_Info img {
+    display: none;   
+}
+
+a.Feedback_Message_Wrapper_Close {
+    top: 2px;
+    right: 0px;
+    font-size: 19px;
+    text-align: right;
+}
+
+a.Feedback_Message_Wrapper_Close:hover {
+    text-decoration: none;   
+}
+
+.Feedback_Message_Wrapper_Close:after {
+    content: "\f00d"; /* fa-times at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    margin-top: 0;   
+    margin-left: 3px;
+    color: white; /* IE8 */
+    color: rgba(255, 255, 255, 0.5);
+}
+
+div.Feedback_Message_Error {
+    background-color: #990000;
+    color: white;
+}
+
+div.Feedback_Message_Success {
+    background-color: #ACC965;
+    color: #333;
+}
+
+div.Feedback_Message_Warning {
+    background-color: #F2C94E;   
+    color: #333;
+}
+
+div.Feedback_Message_Info {
+    background-color: #AABDCF;
+    color: #333;
+}
+
+.Tabs_Wrapper {
+    border: 1px solid transparent;
+}
+
+div.Tabs_TabOn, li.Tabs_TabOn {
+    background: rgb(242, 242, 242);
+    border-bottom: 1px solid rgb(242, 242, 242);
+}
+
+ul.Tabs_Header {
+    height: 43px;
+}
+
+div.Tabs_TabOn, li.Tabs_TabOn,
+div.Tabs_TabOff, li.Tabs_TabOff {
+    padding: 10px;
+}
+
+.Tabs_TabBody.OSAutoMarginTop {
+    margin-top: 42px;
+}
+
+.Tabs_TabBody {
+    padding: 20px;   
+}
+
+div.Tabs_TabOff, li.Tabs_TabOff,
+a.Tabs_TabOff, a.Tabs_TabOff:link, a.Tabs_TabOff:visited {
+    background: #e6e6e6;
+}
+
+a.Tabs_TabOff:hover {
+    background: #e6e6e6;
+    text-decoration: underline;
+}
+
+div.Feedback_AjaxWait {
+    background-color: #999;
+    padding-left: 10px;
+}
+
+div.Feedback_AjaxWait > img {
+    background-image: url('/RichWidgets/img/SpinLondon.gif');
+    margin-right: 5px;
+}
+
+/* Popups */
+div.os-internal-Popup .os-internal-ui-dialog,
+div.os-internal-Popup.os-internal-ui-dialog {
+    border: 1px solid #999;
+}
+div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-titlebar,
+div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-titlebar {
+    background: #888;
+}
+
+ul.os-internal-ui-autocomplete a {
+  -webkit-transition: none;
+  transition: none;
+}
+
+ul.os-internal-ui-autocomplete a.os-internal-ui-state-hover {
+    text-decoration: none;
+    cursor: default;
+    background:#006699;    
+}
+
+div.os-internal-Popup .os-internal-ui-dialog .os-internal-ui-dialog-title, 
+div.os-internal-Popup.os-internal-ui-dialog .os-internal-ui-dialog-title {
+    top: 4px;
+}
+
+/* Pagination */
+a.ListNavigation_PageNumber:link,
+span.ListNavigation_CurrentPageNumber,
+span.ListNavigation_Ellipsis {
+    padding: 5px 12px;
+    margin: 0 0 0 5px;
+}
+
+
+/* On Tablet Portrait... */
+@media screen and (max-width: 1023px) {  
+    a.ListNavigation_PageNumber:link,
+    span.ListNavigation_CurrentPageNumber,
+    span.ListNavigation_Ellipsis {
+        display: none;
+        -servicestudio-display: none!important;
+    }
+}
+
+span.ListNavigation_CurrentPageNumber {
+    background: #505050;
+    border-color: #404040;
+}
+
+a.ListNavigation_Previous:link,
+a.ListNavigation_Next:link,
+span.ListNavigation_DisabledNext, 
+span.ListNavigation_DisabledPrevious {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+    padding: 6px 20px 7px 20px;
+}
+
+span.ListNavigation_DisabledNext, span.ListNavigation_DisabledPrevious {
+    display: none;
+    -servicestudio-display: none!important;   
+}
+
+.ListNavigation_Previous:before,
+.ListNavigation_DisabledPrevious:before {
+    content: "\f060"; /* fa-arrow-left at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+
+.ListNavigation_Next:after,
+.ListNavigation_DisabledNext:after {
+    content: "\f061"; /* fa-arrow-right at http://fortawesome.github.io/Font-Awesome/icons/ */
+    font-family: FontAwesome;
+    margin-left: 7px;
+}
+
+/* Chart Colors */
+.Chart_Color1 {
+    color: #E83E26;
+}
+
+.Chart_Color2 {
+    color: #00A8C4;
+}
+
+.Chart_Color3 {
+    color: #e68a00;
+}
+
+.Chart_Color4 {
+    color: #f3da61;
+}
+
+.Chart_Color5 {
+    color: #88B23A;
+}
+
+.Chart_Color6 {
+    color: #a5d38e;
+}
+
+.Chart_Color7 {
+    color: #cc1439;
+}
+
+.Chart_Color8 {
+    color: #e68c7c;
+}
+
+.Chart_Color9 {
+    color: #976bb3;
+}
+
+.Chart_Color10 {
+    color: #ccb8cc;
+}
+
+
+/***    9. Responsive desktop    ***/
+
+@media screen and (min-width: 1024px) {
+    .Responsive .HiddenInDesktop {
+        display: none;
+        -servicestudio-display: block !important;
+    }
+    
+    .Header_LeftSection {
+        margin-right: 0px;
+    }
+}
+
+/* CSS for IE8 or bellow */
+@media \0screen\,screen\9 {
+    .HiddenInDesktop {
+        display: none;
+    }
+}
+
+.ShowOnlyInSmartphone {
+    display: none;
+    -servicestudio-display: none!important;
+}
+
+/* .HiddenInPortrait, .HiddenInDesktop, .HiddenInSmartphone, .ShowOnlyInSmartphone */
+
+
+/***    10. Responsive tablet portrait    ***/
+
+@media screen and (max-width: 1023px) {  
+    /* Menu is hidden - redefine margin-tops */
+    .Responsive.Content {
+        padding-top: 61px;
+    }
+    
+    .Responsive .Feedback_Message_Wrapper {
+        margin-top: 80px;
+        left: 0px;
+    }
+    
+    .Responsive .HiddenInPortrait {
+        display: none;
+        -servicestudio-display: none!important;
+    }
+        
+    .Responsive div.Feedback_Message_Error, 
+    .Responsive div.Feedback_Message_Success,
+    .Responsive div.Feedback_Message_Warning, 
+    .Responsive div.Feedback_Message_Info {
+        max-width: 764px;
+        min-width: 400px;
+    }
+    
+    /* Hide user name */
+    .Responsive .Login_Info_Username {
+        font-size:  0;
+    }
+    .Responsive .Login_Info {
+        margin-right:  10px;
+    }
+
+    .Responsive .Login_Info_Logout {
+        position:fixed;
+        bottom:10px;
+        right: -260px;
+        z-index:1;
+    }
+
+    .MenuSlider_IsOpen .Responsive .Login_Info_Logout {
+        right: 15px;
+    }
+}
+
+@media screen {
+@-ms-viewport { width: device-width; }
+} 
+
+/***    11. Responsive smartphones  ***/
+
+@media screen and (max-width: 764px) {
+    .EPATaskbox_Container,
+    .ECT_FeedbackContainer { 
+        display: none; 
+    }
+    
+    .Responsive .ShowOnlyInSmartphone {
+        display: block;
+        -servicestudio-display: block!important;
+    }
+    
+    .Responsive .HiddenInPortrait {
+        display: block;
+        -servicestudio-display: block!important;
+    }
+    
+    .Responsive .MainPopup {
+        display: block;
+    }
+    
+    .Responsive .ThemeGrid_Container {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .Responsive.ThemeGrid_Wrapper {
+        min-width: 100%;
+    }
+    
+    .Responsive table[class*="ThemeGrid_Width"] {
+        display: inline-table;
+    }
+    
+    .Responsive .EditRecord td,
+    .Responsive .ShowRecord td {
+        width: 100%;
+        display: block;
+        float: left;
+    }
+    
+    .Responsive .Not_Valid:focus~.ValidationMessage {
+        border-top: 0;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-left-width: 1px;
+        border-top: 0px;
+        display: block;
+        position:static;
+    }
+
+    .Responsive td.EditRecord_Buttons {
+        white-space: nowrap;
+    }
+    
+    .Responsive td.ShowRecord_Caption {
+        padding-bottom: 0px;
+        padding-top: 10px;
+    }
+
+    .Responsive td.ShowRecord_Value {
+        padding-top: 0px;
+        font-size: 16px;
+    }
+    
+    .Responsive .ListNavigation_Wrapper {
+        font-size: 14px;
+    }
+    
+    .Responsive .Application_Title {
+        padding: 0px;   
+    }
+    
+    .Responsive .Title {
+        width: 60%;
+    }
+
+    .Responsive .Actions {
+        width: 40%;
+    }
+    
+    .Responsive .Actions a {
+        font-size: 0px; /* Only show icon */
+        margin-left: 0px;
+    }
+    
+    .Responsive div.Feedback_Message_Error, 
+    .Responsive div.Feedback_Message_Success,
+    .Responsive div.Feedback_Message_Warning, 
+    .Responsive div.Feedback_Message_Info {
+        max-width: 90%;
+        min-width: 10px;
+    }      
+
+    .Responsive .Login_Info_Username {
+        display:  none;
+        -servicestudio-display: none!important;
+    }
+    
+    .Responsive [class*="ThemeGrid_Width"].HiddenInSmartphone,
+    .Responsive .HiddenInSmartphone,
+    .Responsive .Counter_Message,
+    .Responsive .AppSwitcherContainer {
+        display: none;
+        -servicestudio-display: none!important;
+    }
+    
+    .Responsive li.Tabs_TabOff,
+    .Responsive div.Tabs_TabOff {
+        width: 30px;
+    }
+       
+    .Responsive div.Tabs_TabOff, 
+    .Responsive li.Tabs_TabOff, 
+    .Responsive a.Tabs_TabOff, 
+    .Responsive a.Tabs_TabOff:link, 
+    .Responsive a.Tabs_TabOff:visited {
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+    }
+}
+
+.ShowOnlyInSmartphone {
+    display: none;
+}
+
+/***    12. Additional patterns  ***/
+
+/**** Cards ****/
+
+div.Card {
+    padding: 15px; 
+}
+
+div.Card.LightBlue,
+div.CardLightBlue {
+    background-color: #00A8C4;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.Blue,
+div.CardBlue {
+    background-color: #174E9A;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.Red,
+div.CardRed {
+    background-color: #E83E26;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.Orange,
+div.CardOrange {
+    background-color: #FF7100;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.Violet,
+div.CardViolet {
+    background-color: #7D427C;
+    color: white;   
+    padding: 15px;
+}
+
+div.Card.Green,
+div.CardGreen {
+    background-color: #88B23A;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.DarkGray,
+div.CardDarkGray {
+    background-color: #555555;
+    color: white;
+    padding: 15px;
+}
+
+div.Card.Gray,
+div.CardGray {
+    background-color: #E2E2E2;
+    color: #333;
+    padding: 15px;
+}
+
+div.Card.White,
+div.CardWhite {
+    background-color: #FFF;
+    color: #333;
+    padding: 15px;
+}
+
+/**** Breadcrumbs ****/
+
+.Title div.Breadcrumbs {
+    font-size: 12px;
+    position: absolute;
+    top: -32px;
+    left: 0px;
+    color: #999;
+    -servicestudio-min-width: 100px;
+}
+
+/* ExcludeFromPickers: Header, Application_Title, Login_Info, AppSwitcherContainer, Login_Info_Username, Login_Info_Logout, AppSwitcherListContainer, 
+AppSwitcherList, AppSwitcherLink, AppSwitcherDownArrow, MainContent, Title, Actions, fa-plus, 
+Title_Links, Content, Footer, MainPopup, Responsive, ThemeGrid_MarginGutter, ThemeGrid_Container, ThemeGrid_Wrapper, OSInlineClear, Bold, Italic, Underline, Text_AlignBaseline, 
+Header_Menu, Menu_TopMenus, Menu_TopMenuActive, Menu_TopMenu, Menu_SubMenuItemActive, Menu_SubMenuItem, Menu_DropDownArrow, Menu_DropDownPanel, Button, 
+ListNavigation_PageNumber, ListNavigation_CurrentPageNumber, ListNavigation_Ellipsis, ListNavigation_Previous, ListNavigation_Next, ButtonDefault, 
+Is_Default, Filters_Wrapper, EditRecord, EditRecord_Caption, EditRecord_Value, EditRecord_Buttons, ShowRecord_Caption, ShowRecord_Value,Te ShowRecord, 
+TableRecords_Header, TableRecords, TableRecords_OddLine, TableRecords_EvenLine, TableRecords_BottomNavigation, RecordPicture, RecordPicture_Wrapper, 
+InputMandatorySymbol, MandatoryCaption, MandatoryLabel, Prompt, Not_Valid, ValidationMessage, Feedback_Message_Wrapper, Feedback_Message_Error, Feedback_Message_Success, 
+Feedback_Message_Warning, Feedback_Message_Info, Feedback_Message_Wrapper_Close, os-internal-Popup, os-internal-ui-dialog, os-internal-ui-dialog-titlebar, 
+os-internal-ui-autocomplete, os-internal-ui-state-hover, os-internal-ui-dialog-title, ListNavigation_DisabledNext, ListNavigation_DisabledPrevious, 
+Chart_Color1, Chart_Color2, Chart_Color3, Chart_Color4, Chart_Color5, Chart_Color6, Chart_Color7, Chart_Color8, Chart_Color9, Chart_Color10, 
+ThemeGrid_Container, Counter_Message, 2, ListNavigation_Wrapper, EPATaskbox_Container, ECT_FeedbackContainer, MenuSlider_IsOpen,
+Header_LeftSection, Header_RightSection, Blue, Orange, LightBlue, Violet, DarkGray, Feedback_AjaxWait, Gray, Green, MenuSlider_Toggler, OSAutoMarginTop, Red, 
+TableRecords_TopNavigation, Tabs_Header, Tabs_TabBody, Tabs_TabOff, Tabs_TabOn, Tabs_Wrapper, Title_Section, White, Application_Menu, Breadcrumbs */
